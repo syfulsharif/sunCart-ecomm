@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SunCart â Summer Essentials Store
 
-## Getting Started
+SunCart is a high-fashion summer styling and ecommerce prototype. It provides a curated selection of summer essentials like sunglasses, skincare, and luxury accessories.
 
-First, run the development server:
+## Live URL
+[Placeholder URL - Not Deployed]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Key Features
+- **Vibrant Summer Aesthetic**: Implemented using Tailwind CSS and DaisyUI, featuring a customized high-fashion aesthetic (Inter & Playfair Display typography, warm "summer sand" and "hot orange" color palette).
+- **Authentication**: A client-side mock implementation inspired by BetterAuth, complete with social login placeholders and protected routes.
+- **Product Store**: Displays featured products fetched from a local JSON store. Includes detailed product view with engaging interactions.
+- **Micro-Animations**: Smooth entry, scroll, and hover animations utilizing Framer Motion. 
+- **User Profile Management**: Functionality to manage and update the user's name and avatar within a protected profile page.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
+- Frontend: React 18 (Vite)
+- Routing: React Router v6
+- Styling: Tailwind CSS, DaisyUI
+- Icons: Lucide React
+- Animation: Framer Motion (motion/react)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Setup Instructions
+1. Check `.env.example` to configure any environment variables (mock setup requires no backend env vars).
+2. Install dependencies: `npm install`
+3. Run dev server: `npm run dev`
