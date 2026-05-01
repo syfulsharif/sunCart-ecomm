@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light;
+}
+
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  --color-summer-orange: #FF5A00;
+  --color-summer-sand: #FFFBF5;
+  --color-summer-dark: #111111;
+  --color-summer-secondary: #3D5A80;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-summer-sand);
+  color: var(--color-summer-dark);
+}
