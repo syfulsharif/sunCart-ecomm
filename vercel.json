@@ -5,7 +5,7 @@
   "framework": null,
   "functions": {
     "api/auth/[...all].js": {
-      "runtime": "nodejs18.x"
+      "runtime": "nodejs20.x"
     }
   },
   "rewrites": [
