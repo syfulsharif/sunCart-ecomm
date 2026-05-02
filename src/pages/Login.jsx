@@ -1,21 +1,21 @@
 import { motion } from 'motion/react';
 import { useSession } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { Mail, Lock, LogIn } from 'lucide-react';
 
 export default function Login() {
   const { signIn, user, isLoading } = useSession();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
     if (user) {
-      navigate('/');
+      router.push('/');
     }
-  }, [user, navigate]);
+  }, [user, router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

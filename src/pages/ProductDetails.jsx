@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useSession } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import productsData from '../data/products.json';
@@ -6,20 +6,21 @@ import { motion } from 'motion/react';
 import { ArrowLeft, Star, ShieldCheck, Truck, RotateCcw } from 'lucide-react';
 
 export default function ProductDetails() {
-  const { id } = useParams();
+  const router = useRouter();
+  const { id } = router.query;
   const { user, isLoading } = useSession();
-  const navigate = useNavigate();
-  const [product, setProduct] = useState(productsData.find(p => p.id === id));
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // Protected route check
     if (!isLoading && !user) {
-      navigate('/login');
+      router.push('/login');
     }
-  }, [user, isLoading, navigate]);
+  }, [user, isLoading, router]);
 
   useEffect(() => {
-    setProduct(productsData.find(p => p.id === id));
+    if (id) {
+      setProduct(productsData.find((p) => p.id === id));
+    }
   }, [id]);
 
   if (isLoading || !user) {
@@ -33,7 +34,7 @@ export default function ProductDetails() {
   return (
     <div className="min-h-screen pt-28 pb-16 w-full max-w-7xl mx-auto px-4 md:px-12">
       <button 
-        onClick={() => navigate('/')} 
+        onClick={() => router.push('/')} 
         className="flex items-center gap-2 mb-10 text-[11px] font-bold uppercase tracking-widest text-[#111] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors relative before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-[1px] before:bg-currentColor hover:before:w-full before:transition-all"
       >
         <ArrowLeft className="w-4 h-4" /> Back to Store

@@ -1,12 +1,12 @@
 import { useSession } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { motion } from 'motion/react';
 import { ShieldCheck, User, Mail, Camera, Save, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Profile() {
   const { user, isLoading, updateUser } = useSession();
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState('');
@@ -14,12 +14,12 @@ export default function Profile() {
   
   useEffect(() => {
     if (!isLoading && !user) {
-      navigate('/login');
+      router.push('/login');
     } else if (user) {
       setName(user.name);
       setImage(user.image || '');
     }
-  }, [user, isLoading, navigate]);
+  }, [user, isLoading, router]);
 
   if (isLoading || !user) {
     return <div className="min-h-screen flex justify-center items-center"><span className="loading loading-spinner text-[var(--color-summer-orange)]"></span></div>;

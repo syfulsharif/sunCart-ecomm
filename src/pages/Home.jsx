@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import productsData from '../data/products.json';
 
 export default function Home() {
@@ -54,7 +54,7 @@ export default function Home() {
           <div className="text-[11px] uppercase tracking-[2px] font-bold opacity-40 mb-2">Featured Essentials</div>
           <div className="flex justify-between items-end">
              <h2 className="text-4xl md:text-6xl font-black tracking-[-2px] uppercase">The Collection</h2>
-             <Link to="/" className="hidden md:block text-[12px] font-bold uppercase tracking-wider hover:text-[var(--color-summer-orange)] transition-colors">
+             <Link href="/" className="hidden md:block text-[12px] font-bold uppercase tracking-wider hover:text-[var(--color-summer-orange)] transition-colors">
                View All
              </Link>
           </div>
@@ -70,7 +70,7 @@ export default function Home() {
               transition={{ delay: index * 0.15 }}
               className="group cursor-pointer flex flex-col md:flex-row gap-6 md:items-center border-b border-black/5 pb-8 relative"
             >
-              <Link to={`/products/${product.id}`} className="block relative w-full md:w-[120px] lg:w-[150px] aspect-square bg-[#e8e4e0] shrink-0 overflow-hidden">
+              <Link href={`/products/${product.id}`} className="block relative w-full md:w-[120px] lg:w-[150px] aspect-square bg-[#e8e4e0] shrink-0 overflow-hidden">
                 <img 
                   src={product.image} 
                   alt={product.name} 
@@ -88,7 +88,7 @@ export default function Home() {
                   ${product.price.toFixed(2)}
                 </div>
               </div>
-              <Link to={`/products/${product.id}`} className="absolute inset-0 z-10">
+              <Link href={`/products/${product.id}`} className="absolute inset-0 z-10">
                 <span className="sr-only">View {product.name}</span>
               </Link>
             </motion.div>

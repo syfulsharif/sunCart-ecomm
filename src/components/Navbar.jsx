@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useSession } from '../context/AuthContext';
 import { LogOut, User, Menu, X } from 'lucide-react';
 import clsx from 'clsx';
@@ -23,15 +23,15 @@ export default function Navbar() {
       isScrolled ? "bg-[var(--color-summer-sand)] shadow-sm border-black/10" : "bg-transparent border-transparent"
     )}>
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost normal-case text-2xl font-black tracking-tighter uppercase text-[var(--color-summer-dark)]">
+        <Link href="/" className="btn btn-ghost normal-case text-2xl font-black tracking-tighter uppercase text-[var(--color-summer-dark)]">
           SunCart<span className="text-[var(--color-summer-orange)]">.</span>
         </Link>
       </div>
       <div className="flex gap-3 overflow-hidden">
         <div className="hidden lg:flex gap-8 ml-auto">
-          <Link to="/" className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Home</Link>
+          <Link href="/" className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Home</Link>
           <a href="#products" className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Products</a>
-          <Link to="/profile" className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">My Profile</Link>
+          <Link href="/profile" className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">My Profile</Link>
         </div>
 
         <button className="lg:hidden btn btn-ghost" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -54,7 +54,7 @@ export default function Navbar() {
             </button>
           </div>
         ) : (
-          <Link to="/login" className="btn btn-sm shrink-0 border-none bg-[var(--color-summer-dark)] text-white hover:bg-[var(--color-summer-orange)] rounded-full px-6 py-2 h-auto text-[11px] font-bold uppercase tracking-wider transition-all duration-300">
+          <Link href="/login" className="btn btn-sm shrink-0 border-none bg-[var(--color-summer-dark)] text-white hover:bg-[var(--color-summer-orange)] rounded-full px-6 py-2 h-auto text-[11px] font-bold uppercase tracking-wider transition-all duration-300">
             Login / Register
           </Link>
         )}
@@ -62,15 +62,15 @@ export default function Navbar() {
 
       {isMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-[var(--color-summer-sand)] border-b border-black/10 flex flex-col items-center py-4 gap-4 shadow-md">
-          <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Home</Link>
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Home</Link>
           <a href="#products" onClick={() => setIsMenuOpen(false)} className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Products</a>
-          <Link to="/profile" onClick={() => setIsMenuOpen(false)} className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">My Profile</Link>
+          <Link href="/profile" onClick={() => setIsMenuOpen(false)} className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">My Profile</Link>
           {user ? (
             <button onClick={() => { signOut(); setIsMenuOpen(false); }} className="btn btn-sm border-none bg-[var(--color-summer-dark)] text-white hover:bg-[var(--color-summer-orange)] rounded-full px-5 py-2 uppercase tracking-wider transition-all duration-300">
               Logout
             </button>
           ) : (
-            <Link to="/login" onClick={() => setIsMenuOpen(false)} className="btn btn-sm border-none bg-[var(--color-summer-dark)] text-white hover:bg-[var(--color-summer-orange)] rounded-full px-6 py-2 h-auto text-[11px] font-bold uppercase tracking-wider transition-all duration-300">
+            <Link href="/login" onClick={() => setIsMenuOpen(false)} className="btn btn-sm border-none bg-[var(--color-summer-dark)] text-white hover:bg-[var(--color-summer-orange)] rounded-full px-6 py-2 h-auto text-[11px] font-bold uppercase tracking-wider transition-all duration-300">
               Login / Register
             </Link>
           )}
