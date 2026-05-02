@@ -1,16 +1,22 @@
-# SunCart â Summer Essentials Store
+# ☀️ SunCart — Summer Essentials Store
+SunCart is a high-fashion summer styling and e-commerce prototype. Designed with a luxury aesthetic in mind, it provides a curated selection of summer essentials—from designer sunglasses to premium skincare—wrapped in a fluid, motion-driven user experience.
 
-SunCart is a high-fashion summer styling and ecommerce prototype. It provides a curated selection of summer essentials like sunglasses, skincare, and luxury accessories.
+🔗 Live Demo
 
 ## Live URL
-[Placeholder URL - Not Deployed]
+[https://sun-cart-ecomm.vercel.app/]
 
-## Key Features
-- **Vibrant Summer Aesthetic**: Implemented using Tailwind CSS and DaisyUI, featuring a customized high-fashion aesthetic (Inter & Playfair Display typography, warm "summer sand" and "hot orange" color palette).
-- **Authentication**: A client-side mock implementation inspired by BetterAuth, complete with social login placeholders and protected routes.
-- **Product Store**: Displays featured products fetched from a local JSON store. Includes detailed product view with engaging interactions.
-- **Micro-Animations**: Smooth entry, scroll, and hover animations utilizing Framer Motion. 
-- **User Profile Management**: Functionality to manage and update the user's name and avatar within a protected profile page.
+## ✨ Key Features
+
+🎨 Vibrant Summer Aesthetic: A customized high-fashion UI built with Tailwind CSS and DaisyUI, featuring Inter and Playfair Display typography and a warm "Summer Sand" and "Hot Orange" color palette.
+
+🛍️ Product Store: A curated catalog of luxury goods fetched from a local JSON store, featuring detailed product views and engaging UI interactions.
+
+🔐 Mock Authentication: A client-side authentication flow inspired by BetterAuth, including social login placeholders and protected navigation routes.
+
+✨ Micro-Animations: Silky smooth entry, scroll, and hover effects powered by Framer Motion to elevate the premium feel.
+
+👤 Profile Management: Functional user dashboard allowing users to update their name and avatar within a protected profile environment.
 
 ## Tech Stack
 - Frontend: React 18 (Vite)
@@ -19,7 +25,8 @@ SunCart is a high-fashion summer styling and ecommerce prototype. It provides a 
 - Icons: Lucide React
 - Animation: Framer Motion (motion/react)
 
-## Setup Instructions
-1. Check `.env.example` to configure any environment variables (mock setup requires no backend env vars).
-2. Install dependencies: `npm install`
-3. Run dev server: `npm run dev`
+## Styling & Animation 
+ - CSS Framework: Tailwind CSS
+ - UI Components: DaisyUI
+ - Motion: Framer Motion (motion/react)
+ - Typography: Playfair Display (Serif) & Inter (Sans-serif)
