@@ -1,4 +1,5 @@
 import "dotenv/config";
+import path from "path";
 import express from "express";
 import cors from "cors";
 import { auth } from "../lib/auth.js";
@@ -41,7 +42,17 @@ app.all("/api/auth/*", async (req, res) => {
   res.send(Buffer.from(body));
 });
 
+const staticRoot = path.resolve("dist");
+app.use(express.static(staticRoot));
+
+app.get("/*", (req, res) => {
+  if (req.originalUrl.startsWith("/api/auth/")) {
+    return res.status(404).end();
+  }
+  res.sendFile(path.resolve(staticRoot, "index.html"));
+});
+
 const port = Number(process.env.SERVER_PORT || 4000);
 app.listen(port, () => {
-  console.log(`Better Auth server listening on ${process.env.APP_URL || `http://localhost:${port}`}`);
+  console.log(`Production server listening on ${process.env.APP_URL || `http://localhost:${port}`}`);
 });

@@ -9,6 +9,7 @@
     "auth:migrate": "npx auth migrate --config lib/auth.js --yes",
     "build": "vite build",
     "preview": "vite preview",
+    "start": "node server.js",
     "clean": "rm -rf dist"
   },
   "dependencies": {
