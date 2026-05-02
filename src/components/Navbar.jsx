@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="flex gap-3 overflow-hidden">
         <div className="hidden lg:flex gap-8 ml-auto">
           <Link href="/" className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Home</Link>
-          <a href="#products" className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Products</a>
+          <Link href="/#products" className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Products</Link>
           <Link href="/profile" className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">My Profile</Link>
         </div>
 
@@ -63,7 +63,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-[var(--color-summer-sand)] border-b border-black/10 flex flex-col items-center py-4 gap-4 shadow-md">
           <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Home</Link>
-          <a href="#products" onClick={() => setIsMenuOpen(false)} className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Products</a>
+          <Link href="/#products" onClick={() => setIsMenuOpen(false)} className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">Products</Link>
           <Link href="/profile" onClick={() => setIsMenuOpen(false)} className="text-[13px] font-bold uppercase tracking-wide text-[var(--color-summer-dark)] opacity-60 hover:opacity-100 hover:text-[var(--color-summer-orange)] transition-colors">My Profile</Link>
           {user ? (
             <button onClick={() => { signOut(); setIsMenuOpen(false); }} className="btn btn-sm border-none bg-[var(--color-summer-dark)] text-white hover:bg-[var(--color-summer-orange)] rounded-full px-5 py-2 uppercase tracking-wider transition-all duration-300">
