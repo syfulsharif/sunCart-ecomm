@@ -1,5 +1,5 @@
 {
-  "name": "react-example",
+  "name": "suncart-ecomm",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "auth:migrate": "npx auth migrate --config lib/auth.js --yes",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node server.js",
+    "start": "node server/auth.js",
     "clean": "rm -rf dist"
   },
   "dependencies": {
